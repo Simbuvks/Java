@@ -1,0 +1,37 @@
+package week1.day2;
+
+public class methoddeclare {
+
+	public String orderFood(String foodItem)
+	{
+		System.out.println("Food is awsome");
+		return foodItem;
+	}
+	public int billAmount(int bilNo)
+	{
+		System.out.println("Price of food");
+		return bilNo;
+	}
+	public boolean wash() 
+	{
+		return false;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		methoddeclare table = new methoddeclare();
+		int amount = table.billAmount(12);
+		System.out.println(amount);
+		System.out.println(table.orderFood("Dosa"));
+		System.out.println(table.wash());
+		
+		
+		
+		
+		//methoddeclare.orderFood
+		
+		//billAmount.value = new billamount;
+		
+	}
+
+}
