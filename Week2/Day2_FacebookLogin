@@ -1,1 +1,37 @@
 
+package week2.day2;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
+public class FaceBooklogin {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://en-gb.facebook.com/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.findElement(By.xpath("//a[text()='Create new account']")).click();
+		driver.findElement(By.name("firstname")).sendKeys("Silam");
+		driver.findElement(By.name("lastname")).sendKeys("VKS");
+		driver.findElement(By.name("reg_email__")).sendKeys("8508130982");
+		driver.findElement(By.name("reg_passwd__")).sendKeys("SILAMBARASAN@1996");
+		WebElement Days = driver.findElement(By.id("day"));
+	    Select day = new Select(Days);
+	    day.selectByValue("1");
+	    WebElement Months = driver.findElement(By.id("month"));
+	    Select month =new Select(Months);
+	    month.selectByValue("9");
+	    WebElement Years = driver.findElement(By.id("year"));
+	    Select year = new Select(Years);
+	    year.selectByValue("1996");
+	    driver.findElement(By.xpath("//label[text()='Female']")).click();
+	    driver.findElement(By.xpath("//button[text()='Sign Up']")).click();
+	}
+
+}
